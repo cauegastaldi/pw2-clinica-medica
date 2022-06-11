@@ -7,8 +7,7 @@
     require_once("./classes/Paciente.php");
     require_once("./classes/Token.php");
 
-
-    $logado = Token::verificarTokenJWT("http://localhost/PW2/EAD04");
+    $logado = Token::verificarTokenJWT("http://localhost.com");
     if (!$logado) {
         die;
     }
@@ -215,7 +214,7 @@
             header("HTTP/1.1 400 Bad Request");
             echo json_encode([
                 "status" => "error",
-                "msg" => "Não é possível deletar o paciente de id = $id, pois ele possui $numeroDeConsultasVinculadas consultas vinculadas a ele!"
+                "msg" => "Não é possível deletar o paciente de id = $id, pois ele possui $numeroDeConsultasVinculadas consulta(s) vinculada(s) a ele!"
             ]);
             die;
         }

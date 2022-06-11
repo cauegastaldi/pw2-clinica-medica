@@ -4,10 +4,11 @@
     require_once("./configs/json/header.php");
     require_once("./configs/json/utils.php");
     require_once("./configs/json/verbs.php");
+    require_once("./classes/Token.php");
     require_once("./classes/Medico.php");
     require_once("./classes/Especialidade.php");
 
-    $logado = Token::verificarTokenJWT("http://localhost/PW2/EAD04");
+    $logado = Token::verificarTokenJWT("http://localhost.com");
     if (!$logado) {
         die;
     }
@@ -307,7 +308,7 @@
                 header("HTTP/1.1 400 Bad Request");
                 echo json_encode([
                     "status" => "error",
-                    "msg" => "Não é possível deletar o médico de id = $id, pois ele possui $numeroDeConsultasVinculadas consultas vinculadas a ele!"
+                    "msg" => "Não é possível deletar o(a) médico(a) de id = $id, pois ele(a) possui $numeroDeConsultasVinculadas consulta(s) vinculada(s) a ele(a)!"
                 ]);
                 die;
             }

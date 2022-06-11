@@ -89,9 +89,8 @@
             die;
         }
 
-        // Se chegou até aqui é porque o login e a senha digitada estão corretos e existe uma conta com essas informações no BD
         $idAdmin = $contaAdmin["id"];
-        $token = Token::criarTokenJWT("http://localhost/PW2/EAD04", $idAdmin);
+        $token = Token::criarTokenJWT("http://localhost.com", $idAdmin);
         header("Authorization: Bearer $token");
         echo json_encode([
             "status" => "OK",

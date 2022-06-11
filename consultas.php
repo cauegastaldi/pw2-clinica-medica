@@ -4,11 +4,12 @@
     require_once("./configs/json/header.php");
     require_once("./configs/json/utils.php");
     require_once("./configs/json/verbs.php");
+    require_once("./classes/Token.php");
     require_once("./classes/Consulta.php");
     require_once("./classes/Medico.php");
     require_once("./classes/Paciente.php");
 
-    $logado = Token::verificarTokenJWT("http://localhost/PW2/EAD04");
+    $logado = Token::verificarTokenJWT("http://localhost.com");
     if (!$logado) {
         die;
     }
