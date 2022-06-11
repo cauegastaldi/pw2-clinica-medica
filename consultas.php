@@ -1,5 +1,4 @@
 <?php
-    //NOMES: ISABELA FORTI, CAUE GASTALDI, SUZANA XAVIER   
     require_once("./configs/BancoDados.php");
     require_once("./configs/json/header.php");
     require_once("./configs/json/utils.php");
