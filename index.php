@@ -7,6 +7,8 @@
 </head>
 
 <body>
+    <!-- INTEGRANTES DO GRUPO: SUZANA XAVIER, ISABELA FORTI, CAUÊ GASTALDI !-->
+
     <h1>Webservice de Clínica Médica</h1>
     <p>Este webservice JSON contém um sistema de exemplo de uma clínica médica, formada por <b>pacientes</b>,
         <b>médicos</b>, <b>especializações</b> e <b>consultas</b>. Para entrar, o usuário deve criar e fazer o login de
