@@ -231,7 +231,25 @@
             ]);
             die;
         }
-
+        
+        if (strlen($crm) != 6) {
+            header("HTTP/1.1 400 Bad Request");
+            echo json_encode([
+                "status" => "error",
+                "msg" => "CRM deve possuir exatamente 6 dígitos!"
+            ]);
+            die;
+        }
+        
+        if (!crmEhUnico($crm)) {
+            header("HTTP/1.1 400 Bad Request");
+            echo json_encode([
+                "status" => "error",
+                "msg" => "CRM não é único!"
+            ]);
+            die;
+        }
+        
         $medico = Medico::buscarMedico($id);
 
         if ($medico == null) {
