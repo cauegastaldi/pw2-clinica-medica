@@ -44,7 +44,7 @@
         if ($id) {
             header("HTTP/1.1 200 OK");
             echo json_encode([
-                "id" => $id,
+                "id" => intval($id),
                 "login" => $login
             ]);
         } else {
