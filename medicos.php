@@ -151,7 +151,7 @@
         if($id){
             $medico = Medico::buscarMedico($id);
             header("HTTP/1.1 201 Created");
-            echo json_encode([$medico]);
+            echo json_encode($medico);
             die;
         }else{
             header("HTTP/1.1 500 Internal Server Error");
