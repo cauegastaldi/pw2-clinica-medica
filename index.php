@@ -35,8 +35,8 @@
     <p><a href="medicos.php">medicos.php</a> suporta as seguintes operações:</p>
     <ul>
         <li><b>GET</b> - Retorna a lista completa de médicos se não houver nenhum parâmetro id do tipo GET. Se houver um parâmetro id (do tipo GET), caso exista, retorna o médico com o id especificado.</li>
-        <li><b>POST</b> - Adiciona um novo médico. Requer parâmetros <i>nome</i>, <i>crm</i> e <i>idEspecialidade</i>.</li>
-        <li><b>PUT</b> - Edita um médico. Requer parâmetros <i>id</i>, <i>nome</i>, <i>crm</i> e <i>idEspecialidade</i>.</li>
+        <li><b>POST</b> - Adiciona um novo médico. Requer parâmetros <i>nome</i>, <i>crm</i> (deve ser único) e <i>idEspecialidade</i>.</li>
+        <li><b>PUT</b> - Edita um médico. Requer parâmetros <i>id</i>, <i>nome</i>, <i>crm</i> (deve ser único) e <i>idEspecialidade</i>.</li>
         <li><b>DELETE</b> - Remove um médico. Requer parâmetro <i>id</i> (do tipo GET).</li>
     </ul>
     <p><a href="consultas.php">consultas.php</a> suporta as seguintes operações:</p>
