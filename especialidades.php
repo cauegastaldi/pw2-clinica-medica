@@ -34,6 +34,7 @@
 
     if (isMetodo("POST")) {
         if(!parametrosValidos($_POST, ["nome"])) {
+            header("HTTP/1.1 400 Bad Request");
             echo json_encode([
                 "status" => "error",
                 "msg" => "Parâmetro inválido!"
@@ -76,6 +77,7 @@
 
     if (isMetodo("PUT")) {
         if(!parametrosValidos($_PUT, ["id", "nome"])) {
+            header("HTTP/1.1 400 Bad Request");
             echo json_encode([
                 "status" => "error",
                 "msg" => "Parâmetros inválidos!"
