@@ -261,6 +261,15 @@
             die;
         }
         
+        if (!Especialidade::buscarEspecialidadePorId($idEspecialidade)) {
+            header("HTTP/1.1 400 Bad Request");
+            echo json_encode([
+                "status" => "error",
+                "msg" => "Especialidade de id = $idEspecialidade não existe!"
+            ]);
+            die;
+        }
+        
         $res = Medico::editarMedico($id, $nome, $crm, $idEspecialidade);
 
         if ($res) {
