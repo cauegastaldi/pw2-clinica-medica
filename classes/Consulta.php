@@ -49,8 +49,7 @@
         public static function listarConsultas(){
             try{
                 $conexao = Conexao::getConexao(); 
-                $stmt = $conexao->prepare("SELECT c.id, c.data, m.nome as nome_medico, p.nome as nome_paciente FROM consultas c JOIN 
-                medicos m on c.id_medico = m.id JOIN pacientes p on c.id_paciente = p.id ORDER BY c.data"); 
+                $stmt = $conexao->prepare("SELECT id, id_paciente, id_medico, data FROM consultas"); 
                 $stmt->execute(); 
                 
                 $resultado = $stmt->fetchAll(); 
