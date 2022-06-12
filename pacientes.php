@@ -157,10 +157,10 @@
         if ($res) {
             $paciente = Paciente::listarPaciente($id);
             header("HTTP/1.1 200 OK");
-            echo json_encode(
+            echo json_encode([
                 "status" => "OK",
                 "msg" => "Paciente de id = $id editado com sucesso!"
-            );
+            ]);
             die;
         } else {
             header("HTTP/1.1 500 Internal Server Error");
