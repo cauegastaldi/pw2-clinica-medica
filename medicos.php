@@ -195,7 +195,18 @@
             ]);
             die;
         }
+        
+        $medico = Medico::buscarMedico($id);
 
+        if ($medico == null) {
+            header("HTTP/1.1 404 Not Found");
+            echo json_encode([
+                "status" => "error",
+                "msg" => "Médico de id = $id não encontrado!"
+            ]);
+            die; 
+        }
+        
         if (!filterIsInt($crm)) {
             header("HTTP/1.1 400 Bad Request");
             echo json_encode([
@@ -250,17 +261,6 @@
             die;
         }
         
-        $medico = Medico::buscarMedico($id);
-
-        if ($medico == null) {
-            header("HTTP/1.1 404 Not Found");
-            echo json_encode([
-                "status" => "error",
-                "msg" => "Médico de id = $id não encontrado!"
-            ]);
-            die; 
-        }
-
         $res = Medico::editarMedico($id, $nome, $crm, $idEspecialidade);
 
         if ($res) {
